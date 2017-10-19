@@ -5,31 +5,40 @@
 
     <title>Instanews</title>
 
-    <link rel="stylesheet" href="style.css" type="text/css"> 
-    <link rel="stylesheet" href="style.css" media="screen">
-    <link rel="stylesheet" href="style.css" media="all and (max-width: 600px)">
-    <link rel="stylesheet" href="style.css" media="all and (min-width: 600px)">
-    <link rel="stylesheet" href="style.css" media="all and (min-width: 1000px)">
+    <link rel="stylesheet" href="css/styles.css" type="text/css"> 
+    <link rel="stylesheet" href="css/styles.css" media="screen">
+    <link rel="stylesheet" href="css/styles.css" media="all and (max-width: 600px)">
+    <link rel="stylesheet" href="css/styles.css" media="all and (min-width: 600px)">
+    <link rel="stylesheet" href="css/styles.css" media="all and (min-width: 1000px)">
 
   </head>
   <body>
     <header>
       <div class="logo">
-        <img src="/images/nyt-logo.svt" alt="New York Times Logo">
+        <img src="images/nyt-logo.svg" alt="New York Times Logo">
       </div>
-      <h1 class="select-stories">Choose a section</h1>
-      <select name="select"> <!--Supplement an id here instead of using 'name'-->
-        <option value="value1">Value 1</option> 
-        <option value="value2" selected>Value 2</option>
-        <option value="value3">Value 3</option>
+      <h1>Choose a section</h1>
+      
+      <select id="selectedStories"> <!--Supplement an id here instead of using 'name'-->
+        <option value="home">Home</option> 
+        <option value="technology">Technology</option>
+        <option value="science">Science</option>
+        <option value="world">World</option>
+        <option value="national">National</option>
+        <option value="travel">Travel</option>
       </select>
+      
     </header>
     <div class="stories">
+      <ul id="stories">
 
+      </ul>
     </div>
 
     <footer>
       <h3>© Copyright 2017 Instanews </h3>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="build/js/scripts.min.js"></script>
   </body>
 </html>

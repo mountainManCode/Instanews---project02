@@ -13,8 +13,8 @@ gulp.task('scripts', ['lint'], function(){
     .pipe(gulp.dest('./build/js')) // Where do we put the result?
 });
 
-gulp.task('lint', function() {
-  return gulp.src(['./js/*.js','!node_modules/**'])
+gulp.task('eslint', function() {
+  return gulp.src(['./js/*.js'])
   .pipe(eslint())
   .pipe(eslint.format())
   .pipe(eslint.failAfterError());
