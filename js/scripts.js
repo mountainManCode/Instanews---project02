@@ -3,7 +3,13 @@ $(document).ready(function () {
 
 $('#selectedStories').on('change', function(){
 
+
+
   var selectedStories = $(this).val();
+
+  $("#stories").empty();
+
+  //$('#stories').toggle('class="loading">');
   
     //console.log(selectedStories);
 
@@ -19,22 +25,26 @@ $('#selectedStories').on('change', function(){
   
   .done(function(data) {
   
-    $.each(data.results, function(index, value) {
-      console.log(data.results); 
-  
-      var output = '<li>';
-          output += value.title;
-          //output += '<img src="' + value.multimedia[4].url + ''">',
-         output += '</li>';
-      
-          $('#stories').append(output);
-      
+
+    // var multimedia = value.multimedia.filter(function(multimedia) {
+    //   return multimedia.length > 1;
+    // });
+
+    $.each(data.results.filter(function(item) {
+        return item.multimedia.length !== 0;})
+        .slice(0, 12), function(index, value) {
+      //console.log(data.results); 
+
+      var outputTitle = value.title;
+      var outputImage = '<img src="' + value.multimedia[3].url + '">';
+      var outputAbstract = value.abstract;
+      var outputUrl = value.url;
+
+          $('#stories').append('<li>' + '<h2>' + '<a href="' + value.url + '">' + outputTitle + '</h2>' + outputImage + '<p>' + outputAbstract +'</a>' + '</p>' + outputUrl + '</li>');
     });
-   
   
   }).fail(function(err) {
     throw err;
   });
-
 });
 });

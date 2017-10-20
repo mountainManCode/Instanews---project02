@@ -1,0 +1,21 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#stories li {
+
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+
+    img {
+      background-image: outputImage;
+      height: 400px;
+      width: 25vw;
+      
+    }
+}
+
