@@ -1,19 +1,19 @@
 $(document).ready(function () {
 // Built by LucyBot. www.lucybot.com
 
-$('#selectedStories').on('change', function(){
+$('#selectArticle').on('change', function(){
 
 
 
-  var selectedStories = $(this).val();
+  var selectArticle = $(this).val();
 
-  $("#stories").empty();
+  $("#articles").empty();
 
-  //$('#stories').toggle('class="loading">');
+  //$('#articles').toggle('class="loading">');
   
-    //console.log(selectedStories);
+    //console.log(selectArticle);
 
-  var url = "https://api.nytimes.com/svc/topstories/v2/" + selectedStories + ".json";
+  var url = "https://api.nytimes.com/svc/topstories/v2/" + selectArticle + ".json";
   url += '?' + $.param({
     'api-key': "bf7509976e704a8e9e899853b9a17f98"
   });
@@ -36,11 +36,11 @@ $('#selectedStories').on('change', function(){
       //console.log(data.results); 
 
       var outputTitle = value.title;
-      var outputImage = '<img src="' + value.multimedia[3].url + '">';
+      // var outputImage = '<img src="' + value.multimedia[4].url + '">';
       var outputAbstract = value.abstract;
       var outputUrl = value.url;
 
-          $('#stories').append('<li>' + '<h2>' + '<a href="' + value.url + '">' + outputTitle + '</h2>' + outputImage + '<p>' + outputAbstract +'</a>' + '</p>' + outputUrl + '</li>');
+          $('#articles').append('<li class="article__clips" style="background-image: url(' + value.multimedia[4].url + ')">' + '<a href="' + outputUrl + '">' + '<p>' + outputAbstract + '</p>' + '</a>' + '</li>');
     });
   
   }).fail(function(err) {
@@ -48,3 +48,4 @@ $('#selectedStories').on('change', function(){
   });
 });
 });
+// $('#articles').append('<li class="articles_clips" style="background-image: url(' + value.multimedia[4].url + ')">' + '<a href="' + outputUrl + '">' + '<h2 class="article_titles">' + outputTitle + '</h2>' + '<p>' + outputAbstract + '</p>' + '</a>' + '</li>');
