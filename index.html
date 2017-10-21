@@ -10,16 +10,16 @@
     <link rel="stylesheet" href="build/css/style.min.css" media="all and (max-width: 600px)">
     <link rel="stylesheet" href="build/css/style.min.css" media="all and (min-width: 600px)">
     <link rel="stylesheet" href="build/css/style.min.css" media="all and (min-width: 1000px)">
-
   </head>
+  
   <body>
-    <header>
+    <header class="header">
       <div class="logo">
         <img src="images/nyt-logo.svg" alt="New York Times Logo">
       </div>
-      <h1>Choose a section</h1>
+      <h1>Choose a section:</h1>
       
-      <select id="selectArticle"> <!--Supplement an id here instead of using 'name'-->
+      <select id="selectArticle"> 
         <option value="home">Home</option> 
         <option value="technology">Technology</option>
         <option value="science">Science</option>
@@ -29,9 +29,11 @@
       </select>
     </header>
 
-    <div class="articles">
-      <!-- <img class="loadingOn loadingOff" src="images/ajax-loader.gif"> -->
+    <div class="articles loading">
+        <img id="loader" src="images/ajax-loader.gif">
+    </div>
 
+    <div>
       <ul id="articles">
 
       </ul>

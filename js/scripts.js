@@ -3,13 +3,11 @@ $(document).ready(function () {
 
 $('#selectArticle').on('change', function(){
 
-
-
   var selectArticle = $(this).val();
 
   $("#articles").empty();
 
-  //$('#articles').toggle('class="loading">');
+  $('#loader').show();
   
     //console.log(selectArticle);
 
@@ -24,25 +22,22 @@ $('#selectArticle').on('change', function(){
   })
   
   .done(function(data) {
-  
 
-    // var multimedia = value.multimedia.filter(function(multimedia) {
-    //   return multimedia.length > 1;
-    // });
+    $('#loader').hide();
 
     $.each(data.results.filter(function(item) {
         return item.multimedia.length !== 0;})
         .slice(0, 12), function(index, value) {
       //console.log(data.results); 
 
-      var outputTitle = value.title;
+      // var outputTitle = value.title;
       // var outputImage = '<img src="' + value.multimedia[4].url + '">';
       var outputAbstract = value.abstract;
       var outputUrl = value.url;
 
           $('#articles').append('<li class="article__clips" style="background-image: url(' + value.multimedia[4].url + ')">' + '<a href="' + outputUrl + '">' + '<p>' + outputAbstract + '</p>' + '</a>' + '</li>');
-    });
-  
+        });
+
   }).fail(function(err) {
     throw err;
   });

@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column nowrap;
+}
+
+.logo {
+  justify-content: center;
+  align-self: center;
+  max-width: 50%;
+  margin: 2rem 0 2rem 0;
+}
+
+.header h1 {
+  align-self: center;
+  max-width: 50%;
+}
+
+#selectArticle {
+  align-self: center;
+  max-width: 50%;
+}

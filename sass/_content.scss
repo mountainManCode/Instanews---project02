@@ -5,33 +5,47 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#articles {
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-  
-  .articles__clips {
-    background-repeat: no-repeat;
-    background: center / cover;
-    max-width: 100%;
-      
-
-    p {
-      font-size: 20px;
-      color: green;
-      padding: 10px 10px 200px 10px;
-      text-decoration: none;
-      }
-  } 
+#loader {
+  width: 100px;
+  display: none;
+  padding: 45vw;
 }
 
+#articles {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
 
+  @include tablet {
+    flex-flow: row wrap;
+  }
+}
+  
+.article__clips {
+  display: flex;
+  flex-flow: column nowrap;
+  background-repeat: no-repeat;
+  background: center / cover;
+  width: 100%;
+  padding: 50vw 0 0 0;
 
-    // img {
-    //   background-image: outputImage;
-    //   position: relative;
-    //   height: 400px;
-    //   width: 25vw;
-    //   z-index: -1;
-    // }
+  @include tablet {
+    width: 50%;
+    padding: 25vw 0 0 0;
+  }
+
+  @include desktop {
+    width: 25%;
+    padding: 15vw 0 0 0;
+  }
+}    
+    p {
+      align-self: flex-end;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #fff;
+      background-color: rgba(0, 0, 0, .4);
+      padding: 0 5px 5px 5px;
+    }
+
 
