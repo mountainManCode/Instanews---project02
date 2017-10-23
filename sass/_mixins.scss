@@ -5,7 +5,6 @@ $tablet-width: 600px;
   @media (min-width: $tablet-width) {
     @content;
   }
-
 }
 
 $desktop-width: 1000px;

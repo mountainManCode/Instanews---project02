@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="build/css/style.min.css" media="all and (max-width: 600px)">
     <link rel="stylesheet" href="build/css/style.min.css" media="all and (min-width: 600px)">
     <link rel="stylesheet" href="build/css/style.min.css" media="all and (min-width: 1000px)">
+    <link rel="stylesheet" href="selectric.css">
   </head>
   
   <body>
-    <header class="header">
+    <header class="header__large header__small">
       <div class="logo">
         <img src="images/nyt-logo.svg" alt="New York Times Logo">
       </div>
@@ -40,9 +41,10 @@
     </div>
 
     <footer>
-      <h3>© Copyright 2017 Instanews </h3>
+      <h3>© Copyright 2017 <span class="footer__instanews">Instanews</span></h3>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="jquery.selectric.min.js"></script>
     <script src="build/js/scripts.min.js"></script>
   </body>
 </html>

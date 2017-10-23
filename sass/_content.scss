@@ -38,7 +38,8 @@ body {
     width: 25%;
     padding: 15vw 0 0 0;
   }
-}    
+}  
+
     p {
       align-self: flex-end;
       font-size: 1rem;
@@ -48,4 +49,6 @@ body {
       padding: 0 5px 5px 5px;
     }
 
-
+.footer__instanews {
+  text-transform: uppercase;
+}

@@ -1,11 +1,19 @@
 $(document).ready(function () {
 // Built by LucyBot. www.lucybot.com
 
+$(function() {
+  $('select').selectric(
+
+  );
+});
+
 $('#selectArticle').on('change', function(){
 
   var selectArticle = $(this).val();
 
   $("#articles").empty();
+
+  $("header").removeClass("header__large").addClass("header__small");
 
   $('#loader').show();
   
