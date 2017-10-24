@@ -1,5 +1,19 @@
 footer {
+  font-family: 'Open Sans', sans-serif;
   color: #c2c2c2;
   text-align: center;
-  padding: 15vw 0 10vw 0;
+  padding: 5vh 0 5vh 0;
+
+  @include tablet {
+    padding: 10vh 0 5vh 0vw;
+  }
+  
+  @include desktop {
+    text-align: left;
+    padding: 10vh 0 5vh 3vw;
+  }
+
+  .footer__instanews {
+    text-transform: uppercase;
+  }
 }

@@ -1,16 +1,16 @@
-<html>
+<!DOCTYPE html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Instanews</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     <link rel="stylesheet" href="build/css/style.min.css" type="text/css"> 
     <link rel="stylesheet" href="build/css/style.min.css" media="screen">
     <link rel="stylesheet" href="build/css/style.min.css" media="all and (max-width: 600px)">
     <link rel="stylesheet" href="build/css/style.min.css" media="all and (min-width: 600px)">
     <link rel="stylesheet" href="build/css/style.min.css" media="all and (min-width: 1000px)">
-    <link rel="stylesheet" href="selectric.css">
   </head>
   
   <body>
@@ -18,33 +18,33 @@
       <div class="logo">
         <img src="images/nyt-logo.svg" alt="New York Times Logo">
       </div>
-      <h1>Choose a section:</h1>
+      <div class="header__select-article">
+        <h1>Choose a section:</h1>
       
-      <select id="selectArticle"> 
-        <option value="home">Home</option> 
-        <option value="technology">Technology</option>
-        <option value="science">Science</option>
-        <option value="world">World</option>
-        <option value="national">National</option>
-        <option value="travel">Travel</option>
-      </select>
+        <select id="selectArticle"> 
+          <option value="home">Home</option> 
+          <option value="technology">Technology</option>
+          <option value="science">Science</option>
+          <option value="world">World</option>
+          <option value="national">National</option>
+          <option value="travel">Travel</option> 
+        </select>
+      </div>
     </header>
 
     <div class="articles loading">
-        <img id="loader" src="images/ajax-loader.gif">
+        <img id="loader" src="images/ajax-loader.gif" alt="Loading">
     </div>
 
     <div>
-      <ul id="articles">
-
-      </ul>
+      <article id="newsArticles">
+      </article>
     </div>
 
     <footer>
       <h3>© Copyright 2017 <span class="footer__instanews">Instanews</span></h3>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="jquery.selectric.min.js"></script>
     <script src="build/js/scripts.min.js"></script>
   </body>
 </html>

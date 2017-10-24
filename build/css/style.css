@@ -46,6 +46,10 @@ table {
   border-spacing: 0; }
 
 /* end of Reset CSS */
+header {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem; }
+
 .header__small {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -53,8 +57,6 @@ table {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -62,67 +64,131 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  padding: 5vh 0 5vh 0; }
+  padding: 5vh 0 5vh 0;
+  -webkit-transition: all 1000ms cubic-bezier(0.42, 0, 1, 1);
+  transition: all 1000ms cubic-bezier(0.42, 0, 1, 1); }
+  @media (min-width: 600px) {
+    .header__small {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      -ms-flex-line-pack: distribute;
+          align-content: space-around;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      padding: 3vh 0 3vh 0; } }
+  @media (min-width: 600px) and (min-width: 1000px) {
+    .header__small {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      padding: 2vh 0 2vh 2vw; } }
 
-.header__small h1 {
-  font-size: 1rem;
+.header__small .logo {
   -ms-flex-item-align: center;
       align-self: center;
-  max-width: 60%;
+  max-width: 60vw;
+  margin: 2vh 0vw 2vh 0; }
+  .header__small .logo img {
+    max-width: 25vw; }
+  @media (min-width: 600px) {
+    .header__small .logo {
+      max-width: 15vw; }
+      .header__small .logo img {
+        max-width: 10vw; } }
+  @media (min-width: 600px) and (min-width: 1000px) {
+    .header__small .logo {
+      max-width: 12vw; }
+      .header__small .logo img {
+        max-width: 8vw; } }
+
+.header__small .header__select-article {
+  text-align: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  max-width: 100%;
   padding: 1vh 0 1vh 0; }
+  @media (min-width: 600px) {
+    .header__small .header__select-article {
+      max-width: 50%;
+      text-align: left;
+      max-width: 60%;
+      -ms-flex-preferred-size: 40%;
+          flex-basis: 40%;
+      padding: 0 2vw 0 8vw; } }
 
 .header__large {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  padding: 15vh 0 10vh 0; }
-
-.header__large .logo {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  max-width: 50vw; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15vh 0 10vh 0;
+  max-height: 50vh; }
+  @media (min-width: 600px) {
+    .header__large {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      padding: 15vh 0 25vh 0; } }
+  @media (min-width: 1000px) {
+    .header__large {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      padding: 22vh 0 20vh 3vw; } }
 
-.header__large h1 {
-  font-size: 1rem;
-  -ms-flex-item-align: center;
-      align-self: center;
-  max-width: 60%;
-  padding: 3vh 0 3vh 0; }
+.header__large .logo {
+  max-width: 50vw;
+  margin: 2vh 0 2vh 0; }
+  .header__large .logo img {
+    max-width: 100%; }
+  @media (min-width: 600px) {
+    .header__large .logo {
+      max-width: 30vw; } }
+  @media (min-width: 1000px) {
+    .header__large .logo {
+      max-width: 20vw; } }
+
+.header__large .header__select-article {
+  text-align: center;
+  max-width: 100%;
+  padding: 2vh 0 3vh 0; }
+  @media (min-width: 600px) {
+    .header__large .header__select-article {
+      max-width: 30vw;
+      text-align: left; } }
 
 #selectArticle {
+  font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
-  -ms-flex-item-align: center;
-      align-self: center;
-  max-width: 60%;
-  margin: 1vh 0 1vh 0; }
+  max-width: 100%;
+  margin: 2vh 0 1vh 0;
+  background-color: #fff; }
 
 body {
   background-color: #000;
   color: #fff;
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: 'Open Sans', sans-serif; }
 
 #loader {
-  width: 100px;
+  width: 20vw;
   display: none;
-  padding: 45vw; }
+  padding: 10vh 40vw; }
 
-#articles {
+#newsArticles {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,7 +198,7 @@ body {
           flex-flow: column nowrap;
   width: 100%; }
   @media (min-width: 600px) {
-    #articles {
+    #newsArticles {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
           -ms-flex-flow: row wrap;
@@ -152,7 +218,7 @@ body {
   padding: 50vw 0 0 0; }
   @media (min-width: 600px) {
     .article__clips {
-      width: 50%;
+      width: 33.33%;
       padding: 25vw 0 0 0; } }
   @media (min-width: 1000px) {
     .article__clips {
@@ -165,13 +231,20 @@ p {
   font-size: 1rem;
   text-decoration: none;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 0 5px 5px 5px; }
-
-.footer__instanews {
-  text-transform: uppercase; }
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 5px 0 5px; }
 
 footer {
+  font-family: 'Open Sans', sans-serif;
   color: #c2c2c2;
   text-align: center;
-  padding: 15vw 0 10vw 0; }
+  padding: 5vh 0 5vh 0; }
+  @media (min-width: 600px) {
+    footer {
+      padding: 10vh 0 5vh 0vw; } }
+  @media (min-width: 1000px) {
+    footer {
+      text-align: left;
+      padding: 10vh 0 5vh 3vw; } }
+  footer .footer__instanews {
+    text-transform: uppercase; }
