@@ -10,6 +10,7 @@
 * CSS3 (Flexbox)
 * HTML5
 * Google Fonts 
+* Gulp - task runner
 
 ## API Reference
 
