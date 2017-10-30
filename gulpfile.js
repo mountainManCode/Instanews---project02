@@ -32,7 +32,7 @@ gulp.task('sass', function() {
       .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('scripts', ['eslint', 'babel'], function(){
+gulp.task('scripts', ['eslint', 'babel'], function() {
   gulp.src('./js/transpiled/*.js') 
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))

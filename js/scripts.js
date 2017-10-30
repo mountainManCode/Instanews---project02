@@ -1,8 +1,8 @@
-$(document).ready(() => {
+$(document).ready(function() {
 
 $('#selectArticle').on('change', function() {
 
-  const selectArticle = $(this).val();
+  let selectArticle = $(this).val();
 
   $('#newsArticles').empty();
 
