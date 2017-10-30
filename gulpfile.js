@@ -1,18 +1,27 @@
-var gulp = require('gulp');
+const gulp = require('gulp');
 
-// Now that we've installed the uglify package we can require it:
-var uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    browserSync = require('browser-sync'),
-    eslint = require('gulp-eslint'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cssnano = require('gulp-cssnano'),
-    prettyError = require('gulp-prettyerror');
+const uglify = require('gulp-uglify'),
+      rename = require('gulp-rename'),
+      browserSync = require('browser-sync'),
+      eslint = require('gulp-eslint'),
+      sass = require('gulp-sass'),
+      autoprefixer = require('gulp-autoprefixer'),
+      cssnano = require('gulp-cssnano'),
+      prettyError = require('gulp-prettyerror'),
+      babel = require('gulp-babel');
+
+    const input = './js/*.js';
+    const output = './js/transpiled';
+
+    gulp.task('babel', () => {
+      gulp.src(input)
+        .pipe(babel())
+        .pipe(gulp.dest(output));
+    });
 
 gulp.task('sass', function() {
    gulp.src('./sass/style.scss')
-      .pipe(prettyError()) //error handling
+      .pipe(prettyError())
       .pipe(sass())
       .pipe(autoprefixer({
          browsers: ['last 2 versions']
@@ -23,11 +32,11 @@ gulp.task('sass', function() {
       .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('scripts', ['eslint'], function(){
-  gulp.src('./js/*.js') // What files do we want gulp to consume?
-    .pipe(uglify()) // Call the uglify function on these files
-    .pipe(rename({ extname: '.min.js' })) // Rename the uglified file
-    .pipe(gulp.dest('./build/js')) // Where do we put the result?
+gulp.task('scripts', ['eslint', 'babel'], function(){
+  gulp.src('./js/transpiled/*.js') 
+    .pipe(uglify())
+    .pipe(rename({ extname: '.min.js' }))
+    .pipe(gulp.dest('./build/js'))
 });
 
 gulp.task('eslint', function() {
@@ -51,4 +60,4 @@ gulp.task('browser-sync', function() {
     gulp.watch(['*.html', 'build/css/*.css', 'build/js/*.js']).on('change', browserSync.reload);
   });
 
-  gulp.task('default', ['watch', 'browser-sync', 'eslint']);
+  gulp.task('default', ['watch', 'browser-sync', 'eslint', 'babel']);

@@ -1,8 +1,8 @@
-$(document).ready(function () {
+$(document).ready(() => {
 
 $('#selectArticle').on('change', function() {
 
-  var selectArticle = $(this).val();
+  const selectArticle = $(this).val();
 
   $('#newsArticles').empty();
 
@@ -10,7 +10,7 @@ $('#selectArticle').on('change', function() {
 
   $('#loader').show();
   
-  var url = 'https://api.nytimes.com/svc/topstories/v2/' + selectArticle + '.json';
+  let url = 'https://api.nytimes.com/svc/topstories/v2/' + selectArticle + '.json';
   url += '?' + $.param({ 'api-key': 'bf7509976e704a8e9e899853b9a17f98'
   });
   
@@ -27,8 +27,8 @@ $('#selectArticle').on('change', function() {
         return item.multimedia.length !== 0;})
         .slice(0, 12), function(index, value) {
 
-      var outputAbstract = value.abstract;
-      var outputUrl = value.url;
+      let outputAbstract = value.abstract;
+      let outputUrl = value.url;
 
       $('#newsArticles').append('<a href="' + outputUrl + '" class="article__clips" style="background-image: url(' + value.multimedia[4].url + ')">' + '<p>' + outputAbstract + '</p>' + '</a>');
       });
