@@ -1,14 +1,13 @@
-const gulp = require('gulp');
-
-const uglify = require('gulp-uglify'),
-      rename = require('gulp-rename'),
-      browserSync = require('browser-sync'),
-      eslint = require('gulp-eslint'),
-      sass = require('gulp-sass'),
-      autoprefixer = require('gulp-autoprefixer'),
-      cssnano = require('gulp-cssnano'),
-      prettyError = require('gulp-prettyerror'),
-      babel = require('gulp-babel');
+var gulp = require('gulp'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    browserSync = require('browser-sync'),
+    eslint = require('gulp-eslint'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cssnano = require('gulp-cssnano'),
+    prettyError = require('gulp-prettyerror'),
+    babel = require('gulp-babel');
 
     const input = './js/*.js';
     const output = './js/transpiled';
@@ -48,7 +47,7 @@ gulp.task('eslint', function() {
 
 gulp.task('watch', function() {
   gulp.watch('sass/*.scss', ['sass']);
-  gulp.watch('js/*.js', ['scripts']);
+  gulp.watch('js/**/*.js', ['scripts']);
 });
 
 gulp.task('browser-sync', function() {
@@ -60,4 +59,4 @@ gulp.task('browser-sync', function() {
     gulp.watch(['*.html', 'build/css/*.css', 'build/js/*.js']).on('change', browserSync.reload);
   });
 
-  gulp.task('default', ['watch', 'browser-sync', 'eslint', 'babel']);
+  gulp.task('default', ['scripts', 'browser-sync', 'watch']);

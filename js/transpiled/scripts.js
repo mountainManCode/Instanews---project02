@@ -30,7 +30,7 @@ $(document).ready(function () {
         var outputAbstract = value.abstract;
         var outputUrl = value.url;
 
-        $('#newsArticles').append('<a href="' + outputUrl + '" class="article__clips" style="background-image: url(' + value.multimedia[4].url + ')">' + '<p>' + outputAbstract + '</p>' + '</a>');
+        $('#newsArticles').append('<a href="' + outputUrl + '" class="article__clips" style="background-image: url(' + value.multimedia[4].url + ')"><p>' + outputAbstract + '</p></a>');
       });
     }).fail(function (err) {
       throw err;

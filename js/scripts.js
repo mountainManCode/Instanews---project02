@@ -1,8 +1,8 @@
-$(document).ready(function() {
+$(document).ready(() => {
 
 $('#selectArticle').on('change', function() {
 
-  let selectArticle = $(this).val();
+  const selectArticle = $(this).val();
 
   $('#newsArticles').empty();
 
@@ -18,23 +18,22 @@ $('#selectArticle').on('change', function() {
     url: url,
     method: 'GET',
   })
-  
-  .done(function(data) {
+  .done((data) => {
 
     $('#loader').hide();
 
-    $.each(data.results.filter(function(item) {
+    $.each(data.results.filter((item) => {
         return item.multimedia.length !== 0;})
-        .slice(0, 12), function(index, value) {
+        .slice(0, 12), (index, value) => {
 
-      let outputAbstract = value.abstract;
-      let outputUrl = value.url;
+      const outputAbstract = value.abstract;
+      const outputUrl = value.url;
 
-      $('#newsArticles').append('<a href="' + outputUrl + '" class="article__clips" style="background-image: url(' + value.multimedia[4].url + ')">' + '<p>' + outputAbstract + '</p>' + '</a>');
+      $('#newsArticles').append(`<a href="${outputUrl}" class="article__clips" style="background-image: url(${value.multimedia[4].url})"><p>${outputAbstract}</p></a>`);
       });
 
-  }).fail(function(err) {
+  }).fail((err) => {
       throw err;
-    });
+    }); 
 });
 });
