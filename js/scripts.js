@@ -20,16 +20,11 @@ $(document).ready(() => {
     })
     .done((data) => {
   
-      $('#loader').hide();
+      // $('#loader').hide();
 
       data.results.filter(function(item) {
           return item.multimedia.length !== 0;
         }).slice(0, 12).forEach(function(value) {
-
-
-      // data.results.filter(function(item) {
-      //   return item.multimedia.length !== 0;
-      // }).slice(0, 12).each(function() {
 
       // $.each(data.results.filter((item) => {
       //     return item.multimedia.length !== 0;
@@ -37,13 +32,17 @@ $(document).ready(() => {
   
         const outputAbstract = value.abstract;
         const outputUrl = value.url;
-        // const outputImage = value.multimedia[4].url;
+        const imageQuality = value.multimedia.length -1;
+        const outputImage = value.multimedia[imageQuality].url;
 
-        $('#newsArticles').append(`<a href="${outputUrl}" class="article__clips" style="background-image: url(${value.multimedia[4].url})"><p class="article__abstract">${outputAbstract}</p></a>`);
-        });
+        $('#newsArticles').append(`<a href="${outputUrl}" class="article__clips" style="background-image: url(${outputImage})"><p class="article__abstract">${outputAbstract}</p></a>`);
+      });
   
-    }).fail(function() {
-      return 'Your request can not be processed.';
-      }); 
+    }).fail((err) => {
+      $('.newsArticles').html('Your request can not be processed, please try refreshing the page.');
+      throw err;
+      }).always(() => {
+      $('#loader').hide();
+    });
   });
 });

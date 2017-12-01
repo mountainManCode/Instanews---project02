@@ -16,6 +16,7 @@ body {
   flex-flow: column nowrap;
   justify-content: flex-end;
   width: 100%;
+  color: #fff;
 
   @include tablet {
     flex-flow: row wrap;
