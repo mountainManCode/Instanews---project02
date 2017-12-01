@@ -32,14 +32,14 @@ gulp.task('sass', function() {
 });
 
 gulp.task('scripts', ['eslint', 'babel'], function() {
-  gulp.src('./js/transpiled/*.js') 
+  gulp.src('./js/transpiled/**/*.js') 
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
-    .pipe(gulp.dest('./build/js'))
+    .pipe(gulp.dest('./build/js/'))
 });
 
 gulp.task('eslint', function() {
-  return gulp.src(['./js/*.js'])
+  return gulp.src(['./js/**/*.js'])
   .pipe(eslint())
   .pipe(eslint.format())
   .pipe(eslint.failAfterError());
