@@ -173,6 +173,7 @@ header {
 #selectArticle {
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
+  color: #000;
   max-width: 100%;
   margin: 2vh 0 1vh 0;
   background-color: #fff; }
@@ -188,7 +189,7 @@ body {
   display: none;
   padding: 10vh 40vw; }
 
-#newsArticles {
+.news-articles {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,43 +197,50 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   width: 100%; }
   @media (min-width: 600px) {
-    #newsArticles {
+    .news-articles {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
           -ms-flex-flow: row wrap;
               flex-flow: row wrap; } }
-
-.article__clips {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  background-repeat: no-repeat;
-  background: center / cover;
-  width: 100%;
-  padding: 50vw 0 0 0; }
-  @media (min-width: 600px) {
-    .article__clips {
-      width: 33.33%;
-      padding: 25vw 0 0 0; } }
-  @media (min-width: 1000px) {
-    .article__clips {
-      width: 25%;
-      padding: 15vw 0 0 0; } }
-
-p {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  font-size: 1rem;
-  text-decoration: none;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 0 5px 0 5px; }
+  .news-articles .article__clips {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    background-repeat: no-repeat;
+    background: center / cover;
+    width: 100%;
+    padding: 50vw 0 0 0; }
+    @media (min-width: 600px) {
+      .news-articles .article__clips {
+        width: 33.33%;
+        padding: 25vw 0 0 0; } }
+    @media (min-width: 1000px) {
+      .news-articles .article__clips {
+        width: 25%;
+        padding: 15vw 0 0 0; } }
+  .news-articles a {
+    text-decoration: none;
+    line-height: 1.25rem;
+    color: #fff; }
+  .news-articles p.article__abstract {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 0 2.5% 2.5% 2.5%; }
 
 footer {
   font-family: 'Open Sans', sans-serif;

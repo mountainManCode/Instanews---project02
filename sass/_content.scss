@@ -11,40 +11,47 @@ body {
   padding: 10vh 40vw;
 }
 
-#newsArticles {
+.news-articles {
   display: flex;
   flex-flow: column nowrap;
+  justify-content: flex-end;
   width: 100%;
 
   @include tablet {
     flex-flow: row wrap;
   }
-}
+
+  .article__clips {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    background-repeat: no-repeat;
+    background: center / cover;
+    width: 100%;
+    padding: 50vw 0 0 0;
   
-.article__clips {
-  display: flex;
-  flex-flow: column nowrap;
-  background-repeat: no-repeat;
-  background: center / cover;
-  width: 100%;
-  padding: 50vw 0 0 0;
-
-  @include tablet {
-    width: 33.33%;
-    padding: 25vw 0 0 0;
+    @include tablet {
+      width: 33.33%;
+      padding: 25vw 0 0 0;
+    }
+  
+    @include desktop {
+      width: 25%;
+      padding: 15vw 0 0 0;
+    }
   }
 
-  @include desktop {
-    width: 25%;
-    padding: 15vw 0 0 0;
+  a { 
+    text-decoration: none;
+    line-height: 1.25rem;
+    color: #fff;
   }
-}
-    
-p {
-  align-self: flex-end;
-  font-size: 1rem;
-  text-decoration: none;
-  color: #fff;
-  background-color: rgba(0, 0, 0, .5);
-  padding: 0 5px 0 5px;
+
+  p.article__abstract {
+    align-self: flex-end;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .6);
+    color: #fff;
+    padding: 0 2.5% 2.5% 2.5%;
+  }
 }
