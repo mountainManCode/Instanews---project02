@@ -23,17 +23,26 @@ $(document).ready(function () {
 
       $('#loader').hide();
 
-      $.each(data.results.filter(function (item) {
+      data.results.filter(function (item) {
         return item.multimedia.length !== 0;
-      }).slice(0, 12), function (index, value) {
+      }).slice(0, 12).forEach(function (value) {
+
+        // data.results.filter(function(item) {
+        //   return item.multimedia.length !== 0;
+        // }).slice(0, 12).each(function() {
+
+        // $.each(data.results.filter((item) => {
+        //     return item.multimedia.length !== 0;
+        //   }).slice(0, 12), (index, value) => {
 
         var outputAbstract = value.abstract;
         var outputUrl = value.url;
+        // const outputImage = value.multimedia[4].url;
 
         $('#newsArticles').append('<a href="' + outputUrl + '" class="article__clips" style="background-image: url(' + value.multimedia[4].url + ')"><p class="article__abstract">' + outputAbstract + '</p></a>');
       });
-    }).fail(function (err) {
-      throw err;
+    }).fail(function () {
+      return 'Your request can not be processed.';
     });
   });
 });

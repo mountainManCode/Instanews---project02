@@ -21,19 +21,29 @@ $(document).ready(() => {
     .done((data) => {
   
       $('#loader').hide();
-  
-      $.each(data.results.filter((item) => {
+
+      data.results.filter(function(item) {
           return item.multimedia.length !== 0;
-        }).slice(0, 12), (index, value) => {
+        }).slice(0, 12).forEach(function(value) {
+
+
+      // data.results.filter(function(item) {
+      //   return item.multimedia.length !== 0;
+      // }).slice(0, 12).each(function() {
+
+      // $.each(data.results.filter((item) => {
+      //     return item.multimedia.length !== 0;
+      //   }).slice(0, 12), (index, value) => {
   
         const outputAbstract = value.abstract;
         const outputUrl = value.url;
-  
+        // const outputImage = value.multimedia[4].url;
+
         $('#newsArticles').append(`<a href="${outputUrl}" class="article__clips" style="background-image: url(${value.multimedia[4].url})"><p class="article__abstract">${outputAbstract}</p></a>`);
         });
   
-    }).fail((err) => {
-        throw err;
+    }).fail(function() {
+      return 'Your request can not be processed.';
       }); 
   });
-  });
+});
