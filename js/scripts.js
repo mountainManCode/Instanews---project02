@@ -25,10 +25,6 @@ $(document).ready(() => {
       data.results.filter(function(item) {
           return item.multimedia.length !== 0;
         }).slice(0, 12).forEach(function(value) {
-
-      // $.each(data.results.filter((item) => {
-      //     return item.multimedia.length !== 0;
-      //   }).slice(0, 12), (index, value) => {
   
         const outputAbstract = value.abstract;
         const outputUrl = value.url;

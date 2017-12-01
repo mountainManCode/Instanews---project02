@@ -1,3 +1,6 @@
+/* Fonts */
+/* Colors */
+/* Media Queries */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -178,12 +181,6 @@ header {
   margin: 2vh 0 1vh 0;
   background-color: #fff; }
 
-body {
-  background-color: #000;
-  color: #fff;
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif; }
-
 #loader {
   width: 20vw;
   display: none;
@@ -238,13 +235,11 @@ body {
   .news-articles p.article__abstract {
     -ms-flex-item-align: end;
         align-self: flex-end;
-    font-size: 1rem;
     background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
     padding: 0 2.5% 2.5% 2.5%; }
 
 footer {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #c2c2c2;
   text-align: center;
   padding: 5vh 0 5vh 0; }
@@ -257,3 +252,9 @@ footer {
       padding: 10vh 0 5vh 3vw; } }
   footer .footer__instanews {
     text-transform: uppercase; }
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif; }
