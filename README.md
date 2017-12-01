@@ -2,10 +2,10 @@
 
   The Instanews app was developed to showcase my abilities in working with JQuery and AJAX to retrieve up-to-date articles from the New York Times' top-stories. 
 
-  I implemented a 'mobile-first' approach with responsive a layout with flexbox integrated in. 
+  Implemented a 'mobile-first' approach with responsive a layout with flexbox integrated in. 
 
   </br>
-    ![Instanews Screen Shot - Desktop](./images/instanews-screen-shot-desktop.png "Instanews on Desktop")
+    ![Instanews Screen Shot - Desktop](/images/instanews-screen-shot-desktop.png "Instanews on Desktop")
 
 ## Built With
 
