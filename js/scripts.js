@@ -19,8 +19,6 @@ $(document).ready(() => {
       method: 'GET',
     })
     .done((data) => {
-  
-      // $('#loader').hide();
 
       data.results.filter(function(item) {
           return item.multimedia.length !== 0;
@@ -33,12 +31,16 @@ $(document).ready(() => {
 
         $('#newsArticles').append(`<a href="${outputUrl}" class="article__clips" style="background-image: url(${outputImage})"><p class="article__abstract">${outputAbstract}</p></a>`);
       });
-  
-    }).fail((err) => {
-      $('.newsArticles').html('Your request can not be processed, please try refreshing the page.');
-      throw err;
-      }).always(() => {
-      $('#loader').hide();
-    });
+    })
+      .fail((err) => {
+
+       $('.newsArticles').html('Your request can not be processed, please try refreshing the page.');
+        throw err;
+
+        }).always(() => {
+
+         $('#loader').hide();
+
+        });
   });
 });

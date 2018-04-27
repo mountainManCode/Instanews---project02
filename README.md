@@ -5,7 +5,7 @@
   Implemented a 'mobile-first' approach with responsive a layout with flexbox integrated in. 
 
   </br>
-    ![Instanews Screen Shot - Desktop](/images/instanews-screen-shot-desktop.png "Instanews on Desktop")
+    ![Instanews Screen Shot - Desktop](/images/instanews-screen-shot-desktop.png)
 
 ## Built With
 
@@ -14,17 +14,6 @@
 * HTML5
 * Google Fonts 
 * Gulp - task runner
-
-## Installation
-
-### 1. Download me (don't clone me!)
-
-Then add me to your `wp-content` directory.
-
-
-### 2. Install the dev dependencies
-
-Next you'll need to run `npm install` **inside your theme directory** next to install the node modules you'll need for Gulp, etc.
 
 ## API Reference
 
@@ -37,3 +26,4 @@ Next you'll need to run `npm install` **inside your theme directory** next to in
 ## Acknowledgments
 
 * Red Academy Instructors for their support.
+* Fall cohort of 2017.

@@ -21,8 +21,6 @@ $(document).ready(function () {
       method: 'GET'
     }).done(function (data) {
 
-      // $('#loader').hide();
-
       data.results.filter(function (item) {
         return item.multimedia.length !== 0;
       }).slice(0, 12).forEach(function (value) {
@@ -35,9 +33,11 @@ $(document).ready(function () {
         $('#newsArticles').append('<a href="' + outputUrl + '" class="article__clips" style="background-image: url(' + outputImage + ')"><p class="article__abstract">' + outputAbstract + '</p></a>');
       });
     }).fail(function (err) {
+
       $('.newsArticles').html('Your request can not be processed, please try refreshing the page.');
       throw err;
     }).always(function () {
+
       $('#loader').hide();
     });
   });
