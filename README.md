@@ -5,7 +5,7 @@
   Implemented a 'mobile-first' approach with responsive a layout with flexbox integrated in. 
 
   </br>
-    ![Instanews Screen Shot - Desktop](/images/instanews-screen-shot-desktop.png)
+    ![Instanews Screen Shot - Desktop](./images/instanews-screen-shot-desktop.png)
 
 ## Built With
 
